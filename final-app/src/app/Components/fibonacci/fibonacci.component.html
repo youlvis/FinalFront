@@ -1,0 +1,22 @@
+<div class="separator">
+</div>
+<mat-card class="card">
+    <h2>Calcular los n primeros numeros de la seria Fibonacci</h2>
+    <p>
+        <mat-form-field appearance="legacy">
+          <input type="number" matInput [formControl]="number" placeholder="Numeros">
+        </mat-form-field>
+    </p>
+    <br>
+    <button mat-raised-button color="primary" (click)="generate()"
+    [disabled]="!number.dirty || number.value==null">Generar</button>
+    <br>
+    <br>
+    <strong *ngIf="showNumbers">Primeros {{number.value}} numeros de la serie Fibonacci</strong>
+    <ul *ngIf="showNumbers">
+      <li *ngFor="let item of result">
+        <span class="badge">{{item}}</span>
+      </li>
+    </ul>
+    <mat-error *ngIf="errorMessage"><strong>El numero no puede ser negativo o cero</strong></mat-error>
+</mat-card>

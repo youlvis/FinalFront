@@ -1,0 +1,19 @@
+<div class="separator">
+</div>
+<mat-card class="card">
+    <h2>Calcular el factorial de un numero</h2>
+    <p>
+        <mat-form-field appearance="legacy">
+          <input type="number" matInput [formControl]="number" placeholder="Numeros">
+        </mat-form-field>
+    </p>
+    <br>
+    <button mat-raised-button color="primary" (click)="calculate()"
+    [disabled]="!number.dirty || number.value==null">Generar</button>
+    <br>
+    <br>
+    <strong *ngIf="showResult">Factorial de {{number.value}}</strong>
+    <p *ngIf="showResult">{{result}}</p>
+    <mat-error *ngIf="errorMessage"><strong>El numero no puede ser negativo</strong></mat-error>
+
+</mat-card>

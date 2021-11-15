@@ -1,0 +1,27 @@
+<div class="separator">
+</div>
+<mat-card class="card">
+    <h2>Calcular Area y Perimetro de un Rectangulo</h2>
+    <form [formGroup]="rectangleForm">
+        <p>
+            <mat-form-field appearance="legacy">
+            <input type="number" matInput formControlName="alto" placeholder="Alto">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <input type="number" matInput formControlName="largo" placeholder="Largo">
+            </mat-form-field>
+        </p>
+    </form>
+    <br>
+    <button mat-raised-button color="primary" (click)="calculate()"
+    [disabled]="!enableButton">Calcular Area y Perimetro</button>
+    <br>
+    <br>
+    <strong *ngIf="showResult">Area y Perimetro de Rectangulo con Largo : {{rectangleForm.controls['largo'].value}} y Alto:{{rectangleForm.controls['alto'].value}}</strong>
+    <p *ngIf="showResult">Area: {{area}}</p>
+    <p *ngIf="showResult">Perimetro: {{perimetro}}</p>
+    <mat-error *ngIf="errorMessage"><strong>El valor de los lados no puede ser negativo ni cero</strong></mat-error>
+
+</mat-card>

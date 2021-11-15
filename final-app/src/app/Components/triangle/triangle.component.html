@@ -1,0 +1,37 @@
+<div class="separator">
+</div>
+<mat-card class="card">
+    <h2>Calcular el area de un triangulo</h2>
+    <form [formGroup]="triangleForm">
+        <p>
+            <mat-form-field appearance="legacy">
+            <input type="number" matInput formControlName="lado_1" placeholder="Lado 1">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <input type="number" matInput formControlName="lado_2" placeholder="Lado 2">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <input type="number" matInput formControlName="base" placeholder="Base">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+            <input type="number" matInput formControlName="altura" placeholder="Altura">
+            </mat-form-field>
+        </p>
+    </form>
+    <br>
+    <button id="perimetro" mat-raised-button color="primary" (click)="calculate()"
+    [disabled]="!enableButton">Calcular Area y Perimetro</button>
+    <br>
+    <br>
+    <strong *ngIf="showResult">Area y Perimetro de Triangulo con lados : {{triangleForm.controls['lado_1'].value}}, {{triangleForm.controls['lado_2'].value}}, </strong><br>
+    <strong *ngIf="showResult">y base y altura : {{triangleForm.controls['base'].value}}, {{triangleForm.controls['altura'].value}}</strong>
+    <p *ngIf="showResult">Area: {{area}}</p>
+    <p *ngIf="showResult">Perimetro: {{perimetro}}</p>
+    <mat-error *ngIf="errorMessage"><strong>Los valores no pueden ser negativos o cero</strong></mat-error>
+</mat-card>

@@ -1,0 +1,42 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['fibonacci']">Fibonacci <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['factorial']">Factorial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['circle']">Area y perimetro de un circulo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['triangle']">Area y perimetro de un triangulo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['rectangle']">Area y perimetro de un rectangulo</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<!-- <header> -->
+  <mat-toolbar color="primary">
+    <span>FinalApp</span>
+     <a mat-button [routerLink]="['fibonacci']">Fibonnacci</a>
+     <a mat-button [routerLink]="['factorial']">Factorial</a>
+     <a mat-button [routerLink]="['circle']">Area y Perimetro de un Circulo</a>
+     <a mat-button [routerLink]="['triangle']">Area y Perimetro de un Triangulo</a>
+     <a mat-button [routerLink]="['rectangle']">Area y Perimetro de un Rectangulo</a>
+   </mat-toolbar>
+<!-- </header> -->
+<!-- <body> -->
+  
+  <div class="container main-container">
+    <router-outlet></router-outlet>
+  </div>
+<!-- </body> -->

@@ -1,0 +1,20 @@
+<div class="separator">
+</div>
+<mat-card class="card">
+    <h2>Calcular Area y Perimetro de un Circulo</h2>
+    <p>
+        <mat-form-field appearance="legacy">
+          <input type="number" matInput [formControl]="radio" placeholder="Radio">
+        </mat-form-field>
+    </p>
+    <br>
+    <button mat-raised-button color="primary" (click)="calculate()"
+    [disabled]="!radio.dirty || radio.value==null">Generar</button>
+    <br>
+    <br>
+    <strong *ngIf="showResult">Area y Perimetro de un circulo de radio {{radio.value}}</strong>
+    <p *ngIf="showResult">Area : {{area}}</p>
+    <p *ngIf="showResult">Perimetro : {{perimetro}}</p>
+    <mat-error *ngIf="errorMessage"><strong>El radio no puede ser negativo o cero</strong></mat-error>
+
+</mat-card>
